@@ -2,7 +2,7 @@
     <head>
         <script>
             function submitFiles(form){
-                subid = (new Date()).getMilliseconds();
+                subid = (new Date()).getTime();
                 var fd = new FormData();
                 fd.append("subid", String(subid));
                 [].forEach.call(form.filestobeuploaded.files, (file)=>{
