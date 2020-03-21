@@ -2,9 +2,9 @@ from flask import *
 import os
 import subprocess
 
-app = Flask(__name__)  
+app = Flask(__name__,  static_url_path = "/submissions",static_folder = "./submissions")  
  
-@app.route('/')  
+@app.route('/start')  
 def upload():  
     return render_template("index.html")  
 
