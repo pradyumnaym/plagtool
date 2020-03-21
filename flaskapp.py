@@ -2,7 +2,7 @@ from flask import *
 import os
 import subprocess
 
-app = Flask(__name__,  static_url_path = "/submissions",static_folder = "./submissions")  
+app = Flask(__name__,  static_url_path = "",static_folder = "./submissions")  
  
 @app.route('/start')  
 def upload():  
