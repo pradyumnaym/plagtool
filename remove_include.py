@@ -1,8 +1,7 @@
 import os
 import sys
 import re
-print(sys.argv)
-folder = os.path.join('source',sys.argv[1])
+folder = os.path.join('sources',sys.argv[1])
 c_file = re.compile(r".*\.c")
 
 for f in os.listdir(folder):

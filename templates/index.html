@@ -6,7 +6,8 @@
                 var fd = new FormData();
                 fd.append("subid", String(subid));
                 [].forEach.call(form.filestobeuploaded.files, (file)=>{
-                    fd.append(file.name.split("")[0], file);
+                    fd.append(file.name, file);
+                    console.log(file.name);
                 });
                 var xhr = new XMLHttpRequest();
                 xhr.onreadystatechange = function(){

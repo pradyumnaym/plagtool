@@ -11,14 +11,14 @@ m = mosspy.Moss(userid, "python")
 
 # Submission Files
 #m.addFile("submission/a01-sample.py")
-m.addFilesByWildcard(os.path.join("./source",sys.argv[1],"*.ir.c"))
+m.addFilesByWildcard(os.path.join("./sources",sys.argv[1],"*.ir.c"))
 
 url = m.send() # Submission Report URL
 
 print ("Report Url: " + url)
 
 # Save report file
-m.saveWebPage(url, os.path.join("submission",sys.argv[1],"moss","report.html"))
+m.saveWebPage(url, os.path.join("submissions",sys.argv[1],"moss","report.html"))
 
 # Download whole report locally including code diff links
-mosspy.download_report(url,os.path.join("submission",sys.argv[1],"moss","report"), connections=8)
+mosspy.download_report(url,os.path.join("submissions",sys.argv[1],"moss","report"), connections=8)

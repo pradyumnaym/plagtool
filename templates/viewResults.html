@@ -1,9 +1,15 @@
 <html>
     <head>
-
+        <script>
+            function changesource(e){
+                if(e) document.querySelector("#ifr").src = "/{{name}}/moss/report.html";
+                else document.querySelector("#ifr").src = "/{{name}}/jplag/index.html";
+            }
+        </script>
     </head>
     <body>
-        we need to poll here for the result {{name}} and set the iframe source accordingly
-        <iframe></iframe>
+        <button onclick="changesource(1)">MOSS Results</button>
+        <button onclick="changesource(0)">JPlag Results</button>
+        <iframe id = "ifr" width="100%" height="100%"></iframe>
     </body>
 </html>
