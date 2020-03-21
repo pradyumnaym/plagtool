@@ -1,4 +1,6 @@
 from flask import *  
+import os
+
 app = Flask(__name__)  
  
 @app.route('/')  
@@ -12,7 +14,13 @@ def submit():
     #put all the files inside it
     #run m.py on this submission thing
     #have some flag to see if the submissiosnare ready
-    print(request.files)
+    os.mkdir(os.path.join(".", "sources", request.form.get("subid")))
+    for file in request.files:
+        actualfile = request.files[file]
+        print(actualfile.filename)
+        actualfile.save(os.path.join(".","sources", request.form.get("subid"), actualfile.filename.split(os.sep)[-1]))
+
+    #call the run.sh file
     return jsonify({}), 200
     
 @app.route('/success', methods = ['GET'])  
