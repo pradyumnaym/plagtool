@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script>
+            function submitFiles(form){
+                subid = (new Date()).getMilliseconds();
+                var fd = new FormData();
+                fd.append("subid", String(subid));
+                [].forEach.call(form.filestobeuploaded.files, (file)=>{
+                    fd.append(file.name.split("")[0], file);
+                });
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function(){
+                    if(this.readyState == 4 && this.status==200){
+                        window.location.href = `http://localhost:1000/success?subid=${subid}`
+                    }
+                }
+                xhr.open("POST", "/makesubmission");
+                xhr.send(fd);
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        Select the folders you want:
+        <form onsubmit="return submitFiles(this)" action="/success">
+            <!--options BS will come here, we can validate regex as well here only-->
+            <input type="file" name = "filestobeuploaded" webkitdirectory mozdirectory />
+            <input type = "submit" name = "submit" value = "submit">
+        </form>
+    </body>
+</html>
