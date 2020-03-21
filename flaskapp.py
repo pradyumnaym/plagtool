@@ -1,5 +1,6 @@
 from flask import *  
 import os
+import subprocess
 
 app = Flask(__name__)  
  
@@ -19,8 +20,8 @@ def submit():
         actualfile = request.files[file]
         print(actualfile.filename)
         actualfile.save(os.path.join(".","sources", request.form.get("subid"), actualfile.filename.split(os.sep)[-1]))
-
-    #call the run.sh file
+    #./run.sh subid
+    subprocess.call(["./run.sh", str(request.form.get("subid"))])
     return jsonify({}), 200
     
 @app.route('/success', methods = ['GET'])  
