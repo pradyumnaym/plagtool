@@ -14,6 +14,9 @@
                     if(this.readyState == 4 && this.status==200){
                         window.location.href = `http://localhost:1000/success?subid=${subid}`
                     }
+                    else if(this.readyState == 4 && this.status==400){
+                        alert("eroor in input! please check again!!!");
+                    }
                 }
                 xhr.open("POST", "/makesubmission");
                 xhr.send(fd);

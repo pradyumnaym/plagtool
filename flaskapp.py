@@ -21,8 +21,11 @@ def submit():
         print(actualfile.filename)
         actualfile.save(os.path.join(".","sources", request.form.get("subid"), actualfile.filename.split(os.sep)[-1]))
     #./run.sh subid
-    subprocess.call(["./run.sh", str(request.form.get("subid"))])
-    return jsonify({}), 200
+    error = subprocess.call(["./run.sh", str(request.form.get("subid"))])
+    if(error!=0):
+        abort(400)
+    else:  
+        return jsonify({}), 200
     
 @app.route('/success', methods = ['GET'])  
 def success():  
