@@ -1,15 +1,20 @@
 <html>
-    <head>
-        <script>
-            function changesource(e){
-                if(e) document.querySelector("#ifr").src = "/{{name}}/moss/report.html";
-                else document.querySelector("#ifr").src = "/{{name}}/jplag/index.html";
-            }
-        </script>
-    </head>
-    <body>
-        <button onclick="changesource(1)">MOSS Results</button>
-        <button onclick="changesource(0)">JPlag Results</button>
-        <iframe id = "ifr" width="100%" height="100%"></iframe>
-    </body>
+
+<head>
+  <script>
+    function changesource(e) {
+      if (e) document.querySelector("#ifr").src = "/{{name}}/moss/report.html";
+      else document.querySelector("#ifr").src = "/{{name}}/jplag/index.html";
+    }
+  </script>
+  <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+  <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+</head>
+
+<body onload="document.getElementsByTagName('button')[0].click()">
+  <button onclick="changesource(1)">MOSS Results</button>
+  <button onclick="changesource(0)">JPlag Results</button>
+  <iframe id="ifr" width="100%" height="100%"></iframe>
+</body>
+
 </html>

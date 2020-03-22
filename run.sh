@@ -1,5 +1,5 @@
 #!/bin/sh
-export PATH="/home/pradyumna/RELEASE/BIN_LINUX:$PATH"
+export PATH="/home/anushkini/Desktop/Coursework/Projects/PD/plagtool/RELEASE/BIN_LINUX:$PATH"
 python3 remove_include.py $1 #removes include statements in the C files
 
 cd sources/$1/
