@@ -13,7 +13,7 @@
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          window.location.href = `http://?subid=${subid}`
+          window.location.href = `/success?subid=${subid}`
         } else if (this.readyState == 4 && this.status == 400) {
           alert("eroor in input! please check again!!!");
         }
