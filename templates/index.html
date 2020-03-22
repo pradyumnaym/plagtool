@@ -1,11 +1,35 @@
 <html>
-
 <head>
   <script>
     function submitFiles(form) {
+      var sum = 0;
+      document.querySelectorAll("input[type=checkbox]").forEach(ele=>{
+          if(ele.checked) sum+=1;
+      });
+
+
+      if(sum==0){
+        alert("Please select atleast one option");
+        return false;
+      }
+      sum=0;
+      [].forEach.call(form.filestobeuploaded.files, (file) => {
+        sum+=1;
+      });
+
+      if(sum==0){
+        alert("Please select atleast two files");
+        return false;
+      }
+
+
       subid = (new Date()).getTime();
       var fd = new FormData();
       fd.append("subid", String(subid));
+      document.querySelectorAll("input[type=checkbox]").forEach(ele=>{
+        if(ele.checked) fd.append(ele.value, "1");
+        else fd.append(ele.value, "0");
+      });
       [].forEach.call(form.filestobeuploaded.files, (file) => {
         fd.append(file.name, file);
         console.log(file.name);
@@ -33,7 +57,13 @@
     Select the folder with codes:
     <form onsubmit="return submitFiles(this)" action="/success">
       <!--options BS will come here, we can validate regex as well here only-->
-      <input type="file" name="filestobeuploaded" webkitdirectory mozdirectory />
+      <input type="file" name="filestobeuploaded" webkitdirectory mozdirectory /><br><br>
+      With preprocessing:
+      <label for="moss">Moss</label> <input type="checkbox" name="de" value="moss" id="moss">
+      <label for="jplag">Jplag</label> <input type="checkbox" name="de" value="jplag" id = "jplag"> <br>
+      Without preprocessing:
+      <label for="mossw">Moss</label> <input type="checkbox" name="de" value="mossw" id = "mossw">
+      <label for="jplagw">Jplag</label> <input type="checkbox" name="de" value="jplagw" id = "jplagw"><br>
       <input type="submit" name="submit" value="Submit">
     </form>
   </div>

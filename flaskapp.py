@@ -21,7 +21,8 @@ def submit():
         print(actualfile.filename)
         actualfile.save(os.path.join(".","sources", request.form.get("subid"), actualfile.filename.split(os.sep)[-1]))
     #./run.sh subid
-    error = subprocess.call(["./run.sh", str(request.form.get("subid"))])
+    print(["./run.sh", str(request.form.get("subid")), request.form.get("moss"), request.form.get("jplag"), request.form.get("mossw"), request.form.get("jplagw")])
+    error = subprocess.call(["./run.sh", str(request.form.get("subid")), request.form.get("moss"), request.form.get("jplag"), request.form.get("mossw"), request.form.get("jplagw")])
     if(error!=0):
         abort(400)
     else:  

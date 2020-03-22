@@ -3,8 +3,10 @@
 <head>
   <script>
     function changesource(e) {
-      if (e) document.querySelector("#ifr").src = "/{{name}}/moss/report.html";
-      else document.querySelector("#ifr").src = "/{{name}}/jplag/index.html";
+      if (e==1) document.querySelector("#ifr").src = "/{{name}}/moss/report.html";
+      if (e==2) document.querySelector("#ifr").src = "/{{name}}/jplag/index.html";
+      if (e==3) document.querySelector("#ifr").src = "/{{name}}/mossw/index.html";
+      if (e==4) document.querySelector("#ifr").src = "/{{name}}/jplagw/index.html";
     }
   </script>
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
@@ -13,7 +15,10 @@
 
 <body onload="document.getElementsByTagName('button')[0].click()">
   <button onclick="changesource(1)">MOSS Results</button>
-  <button onclick="changesource(0)">JPlag Results</button>
+  <button onclick="changesource(2)">JPlag Results</button>
+  <button onclick="changesource(3)">MOSS Results without preprocessing</button>
+  <button onclick="changesource(4)">JPlag Results without preprocessing</button>
+
   <iframe id="ifr" width="100%" height="100%"></iframe>
 </body>
 
