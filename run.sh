@@ -4,8 +4,8 @@
 #						$1		$2		$3		$4		$5
 #./runs.sh subid moss jplag mossw jplagw
 
-#export PATH="/home/pradyumna/RELEASE/BIN_LINUX:$PATH"
-export PATH="/home/anushkini/Desktop/Coursework/Projects/PD/plagtool/RELEASE/BIN_LINUX:$PATH"
+export PATH="/home/pradyumna/RELEASE/BIN_LINUX:$PATH"
+#export PATH="/home/anushkini/Desktop/Coursework/Projects/PD/plagtool/RELEASE/BIN_LINUX:$PATH"
 
 mkdir submissions/$1
 
