@@ -32,4 +32,4 @@ def success():
     return render_template("viewResults.html", name = request.args.get("subid"))  
 
 if __name__ == '__main__':  
-    app.run(debug = True, port = 1000)
+    app.run(debug = True, port = 1000, host = "0.0.0.0")
