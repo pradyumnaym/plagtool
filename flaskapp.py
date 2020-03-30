@@ -20,7 +20,9 @@ def submit():
         actualfile = request.files[file]
         print(actualfile.filename)
         actualfile.save(os.path.join(".","sources", request.form.get("subid"), actualfile.filename.split(os.sep)[-1]))
-    #./run.sh subid
+
+    #./run.sh subid 4 flags for 4 options
+    #this creates a new folder with the submission ID inside the submissions folder and generate the required files, based on the flags
     error = subprocess.call(["bash","run.sh", str(request.form.get("subid")), request.form.get("moss"), request.form.get("jplag"), request.form.get("mossw"), request.form.get("jplagw")])
     if(error!=0):
         abort(400)
@@ -29,7 +31,7 @@ def submit():
 
 @app.route('/success', methods = ['GET'])  
 def success():  
-    return render_template("viewResults.html", name = request.args.get("subid"))  
+    return render_template("viewResults.html", name = request.args.get("subid"))  #this will be substituted in place of {{name}} everywhere in the template before rendering it
 
 if __name__ == '__main__':  
     app.run(debug = True, port = 1000, host = "0.0.0.0")
