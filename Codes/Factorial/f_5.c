@@ -21,5 +21,5 @@ int factl(int n)
   
 int main() 
 { 
-    printf("Factorial of %d is %d", num, fact(5)); 
+    printf("Factorial of %d is %d", 5, fact(5)); 
 } 
