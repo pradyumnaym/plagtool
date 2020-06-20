@@ -16,7 +16,7 @@ def euclidean_distance(v1, v2):
 assignments = {}
 
 for assignment in d:
-    labelarray = [0] #0 - orig, 1 - plag, 2 - uplag
+    labelarray = [0]    #0 - orig, 1 - plag, 2 - uplag
 
     asgnfeatures = np.zeros((0, 65), dtype = np.float32)
 
@@ -109,7 +109,7 @@ all_proc = {
     "secondele" : secondele
 }
 
-with open("all_proc.pkl", "wb") as f:
+with open("D:\plagtool\\all_proc.pkl", "wb") as f:
     pickle.dump(all_proc, f)
 
 print(pairlabel.shape, pairrep.shape, firstele.shape, secondele.shape)
