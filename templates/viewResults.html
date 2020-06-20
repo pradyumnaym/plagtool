@@ -31,17 +31,22 @@
         margin: 0.4em auto;
       }
     }
+
   </style>
   <script>
+
     function changesource(e) {
       if (e==1) document.querySelector("#ifr").src = "/{{name}}/moss/report.html";
       if (e==2) document.querySelector("#ifr").src = "/{{name}}/jplag/index.html";
       if (e==3) document.querySelector("#ifr").src = "/{{name}}/mossw/report.html";
       if (e==4) document.querySelector("#ifr").src = "/{{name}}/jplagw/index.html";
     }
+
   </script>
+
   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
   <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+  
 </head>
 
 <body onload="document.getElementsByTagName('button')[0].click()">

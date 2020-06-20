@@ -33,52 +33,69 @@
       }
     }
   </style>
+
   <script>
+
     function submitFiles(form) {
+
+      //check if the number of options is atleast 1
       var sum = 0;
       document.querySelectorAll("input[type=checkbox]").forEach(ele => {
         if (ele.checked) sum += 1;
       });
-
-
       if (sum == 0) {
         alert("Please select atleast one option");
         return false;
       }
+
+      //check if atleast 2 files have been selected
       sum = 0;
       [].forEach.call(form.filestobeuploaded.files, (file) => {
         sum += 1;
       });
-
       if (sum == 0) {
         alert("Please select atleast two files");
         return false;
       }
 
-
+      //create a FormData to send all the data to the server
       subid = (new Date()).getTime();
+    
       var fd = new FormData();
+    
       fd.append("subid", String(subid));
+
+
+      //add all the flags to the formdata (flags for the checkboxes)
       document.querySelectorAll("input[type=checkbox]").forEach(ele => {
         if (ele.checked) fd.append(ele.value, "1");
         else fd.append(ele.value, "0");
       });
+    
+      //add each file to the formdata
       [].forEach.call(form.filestobeuploaded.files, (file) => {
         fd.append(file.name, file);
         console.log(file.name);
       });
+
+      //send an ajax request
       var xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+          //redirect to the results page once the results are ready
           window.location.href = `/success?subid=${subid}`
         } else if (this.readyState == 4 && this.status == 400) {
+          //display error otherwise
           alert("eroor in input! please check again!!!");
         }
       }
+
+      //send the formdata
       xhr.open("POST", "/makesubmission");
       xhr.send(fd);
       return false;
     }
+    
   </script>
 </head>
 

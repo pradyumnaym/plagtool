@@ -6,6 +6,8 @@
 
 export PATH="/home/pradyumna/RELEASE/BIN_LINUX:$PATH"
 #export PATH="/home/anushkini/Desktop/Coursework/Projects/PD/plagtool/RELEASE/BIN_LINUX:$PATH"
+export PATH="/home/ubuntu/plagtool/RELEASE/BIN_LINUX:$PATH"
+
 
 mkdir submissions/$1
 
