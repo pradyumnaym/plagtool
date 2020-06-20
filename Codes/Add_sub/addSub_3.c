@@ -26,3 +26,4 @@ int main() {
 	int c = add(a,b);
 	int d = sub(a,b);
 	printf("%d %d\n",c,d);
+}
