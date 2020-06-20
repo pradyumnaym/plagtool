@@ -100,8 +100,8 @@ for assignment in assignments:
             diff = np.abs(pivot - newfeats)
             textfeats = generate_text_features(f1, f2)
             textfeats_u = generate_text_features(f1_u, f2_u)
-            diff = np.concatenate([diff, np.asarray(textfeats, dtype = np.float32)], 0)
             diff_u = np.concatenate([diff, np.asarray(textfeats_u, dtype = np.float32)], 0)
+            diff = np.concatenate([diff, np.asarray(textfeats, dtype = np.float32)], 0)
 
             firstele.append(pivot)
             secondele.append(newfeats)
@@ -131,4 +131,4 @@ all_proc = {
 with open("D:\plagtool\\all_proc_u.pkl", "wb") as f:
     pickle.dump(all_proc, f)
 
-print(pairlabel.shape, pairrep.shape, firstele.shape, secondele.shape)
+print(pairlabel.shape, pairrep.shape, firstele.shape, secondele.shape, pair_u.shape)
