@@ -1,3 +1,4 @@
+#include<stdio.h>
 int main() {
 	int first = 3;
 	int secons = 5;

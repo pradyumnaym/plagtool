@@ -1,0 +1,64 @@
+graph: { title : "LANCE2Graph"
+node: { title : "145734112 "
+ label: "t1
+"
+color: lightred
+}
+node: { title : "145738320 "
+ label: "num_2
+"
+color: lightgreen
+}
+node: { title : "145734496 "
+ label: "t6
+"
+color: lightred
+}
+node: { title : "145734880 "
+ label: "t2
+"
+color: lightgreen
+}
+node: { title : "145732224 "
+ label: "digit_4
+"
+color: green
+}
+node: { title : "145735488 "
+ label: "t4
+"
+color: green
+}
+node: { title : "145734336 "
+ label: "t5
+"
+color: lightgreen
+}
+edge: { sourcename: "145734112 "
+targetname: "145738320 "
+label: "edge 145969248"
+color: red
+}
+edge: { sourcename: "145734880 "
+targetname: "145738320 "
+label: "edge 145969312"
+color: red
+}
+edge: { sourcename: "145732224 "
+targetname: "145734880 "
+label: "edge 145969376"
+color: red
+}
+edge: { sourcename: "145734336 "
+targetname: "145738320 "
+label: "edge 145969440"
+color: red
+}
+edge: { sourcename: "145738320 "
+targetname: "145734336 "
+label: "edge 145969504"
+color: red
+}
+
+
+}

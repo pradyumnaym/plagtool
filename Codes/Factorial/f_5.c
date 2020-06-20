@@ -1,3 +1,4 @@
+#include<stdio.h>
 int factl(int n) 
 { 
     int res = 1, i; 

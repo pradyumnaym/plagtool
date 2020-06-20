@@ -1,3 +1,4 @@
+#include<stdio.h>
 int fib(int n) {
 	int a = 0; 
     int b=0;

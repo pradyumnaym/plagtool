@@ -1,3 +1,4 @@
+#include<stdio.h>
 int add ( int a , int b ) {
 	int p, q, r;
 	int c ;

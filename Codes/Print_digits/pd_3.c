@@ -1,3 +1,4 @@
+#include<stdio.h>
 int DigitPrinter(int num) {
 	int digit;
 	while(num >= 10) {

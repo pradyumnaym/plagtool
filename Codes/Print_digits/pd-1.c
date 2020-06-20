@@ -1,3 +1,4 @@
+#include<stdio.h>
 void print_digits(int n) {
 	if(n == 0)
 		return;

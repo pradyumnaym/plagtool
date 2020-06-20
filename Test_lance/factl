@@ -1,0 +1,144 @@
+graph: { title : "LANCE2Graph"
+node: { title : "151106176 "
+ label: "res_4
+"
+color: lightgreen
+}
+node: { title : "151108448 "
+ label: "p_6
+"
+color: lightred
+}
+node: { title : "151108832 "
+ label: "q_7
+"
+color: lightred
+}
+node: { title : "151109216 "
+ label: "r_8
+"
+color: lightred
+}
+node: { title : "151108064 "
+ label: "i_5
+"
+color: lightgreen
+}
+node: { title : "151111904 "
+ label: "t1
+"
+color: lightred
+}
+node: { title : "151109264 "
+ label: "n_2
+"
+color: lightred
+}
+node: { title : "151108192 "
+ label: "t5
+"
+color: lightred
+}
+node: { title : "151108240 "
+ label: "p_9
+"
+color: lightred
+}
+node: { title : "151108288 "
+ label: "q_10
+"
+color: lightred
+}
+node: { title : "151112368 "
+ label: "r_11
+"
+color: lightred
+}
+node: { title : "151112416 "
+ label: "t4
+"
+color: lightgreen
+}
+node: { title : "151106400 "
+ label: "t2
+"
+color: lightgreen
+}
+node: { title : "151109440 "
+ label: "t3
+"
+color: lightgreen
+}
+edge: { sourcename: "151108448 "
+targetname: "151108832 "
+label: "edge 151355632"
+color: red
+}
+edge: { sourcename: "151108832 "
+targetname: "151109216 "
+label: "edge 151355696"
+color: red
+}
+edge: { sourcename: "151109216 "
+targetname: "151108448 "
+label: "edge 151355760"
+color: red
+}
+edge: { sourcename: "151111904 "
+targetname: "151108064 "
+label: "edge 151355824"
+color: red
+}
+edge: { sourcename: "151111904 "
+targetname: "151109264 "
+label: "edge 151355888"
+color: red
+}
+edge: { sourcename: "151108240 "
+targetname: "151108288 "
+label: "edge 151355952"
+color: red
+}
+edge: { sourcename: "151108288 "
+targetname: "151112368 "
+label: "edge 151356016"
+color: red
+}
+edge: { sourcename: "151112368 "
+targetname: "151108240 "
+label: "edge 151356080"
+color: red
+}
+edge: { sourcename: "151112416 "
+targetname: "151106176 "
+label: "edge 151356144"
+color: red
+}
+edge: { sourcename: "151112416 "
+targetname: "151108064 "
+label: "edge 151356208"
+color: red
+}
+edge: { sourcename: "151106176 "
+targetname: "151112416 "
+label: "edge 151356272"
+color: red
+}
+edge: { sourcename: "151106400 "
+targetname: "151108064 "
+label: "edge 151356336"
+color: red
+}
+edge: { sourcename: "151109440 "
+targetname: "151106400 "
+label: "edge 151356400"
+color: red
+}
+edge: { sourcename: "151108064 "
+targetname: "151109440 "
+label: "edge 151356464"
+color: red
+}
+
+
+}

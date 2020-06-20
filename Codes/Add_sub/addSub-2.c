@@ -1,3 +1,4 @@
+#include<stdio.h>
 void add_sub(int a, int b, int *ans) {
 	ans[0] = a+b;
 	ans[1] = a-b;

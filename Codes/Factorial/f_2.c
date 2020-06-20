@@ -1,3 +1,4 @@
+#include<stdio.h>
 int factorial(int n) 
 {   int a, b, c;
     if(n==1) 

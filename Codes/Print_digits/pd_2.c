@@ -1,3 +1,4 @@
+#include<stdio.h>
 int print_digits(int n) {
 	int temp;
 	while(n >= 10) {

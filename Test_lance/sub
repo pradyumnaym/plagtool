@@ -1,0 +1,39 @@
+graph: { title : "LANCE2Graph"
+node: { title : "137787296 "
+ label: "t2
+"
+color: lightgreen
+}
+node: { title : "137787152 "
+ label: "a_6
+"
+color: lightgreen
+}
+node: { title : "137787200 "
+ label: "b_7
+"
+color: lightgreen
+}
+node: { title : "137787248 "
+ label: "c_9
+"
+color: green
+}
+edge: { sourcename: "137787296 "
+targetname: "137787152 "
+label: "edge 138084720"
+color: red
+}
+edge: { sourcename: "137787296 "
+targetname: "137787200 "
+label: "edge 138084784"
+color: red
+}
+edge: { sourcename: "137787248 "
+targetname: "137787296 "
+label: "edge 138083776"
+color: red
+}
+
+
+}

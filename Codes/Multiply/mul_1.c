@@ -1,3 +1,4 @@
+#include<stdio.h>
 int mul(int, int);
 int main() {
 	int a = 5;

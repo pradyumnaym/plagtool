@@ -1,3 +1,4 @@
+#include<stdio.h>
 //This is a comment
 int print_digits(int n) {
 	int temp; //temp variable

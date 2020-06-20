@@ -1,3 +1,4 @@
+#include<stdio.h>
 int factorial(int n) 
 { 
     int res_ult = 1, index; 
