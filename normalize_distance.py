@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from scipy.interpolate import lagrange
 from numpy.polynomial.polynomial import Polynomial
+from tf import generate_text_features
 
 with open("mfeat_mean.pkl", "rb") as f:
     d = pickle.load(f)
@@ -54,10 +55,11 @@ for assignment in assignments:
     print(assignment)
     for submission in sorted(d[assignment]):
         print(submission)
-
+    
     
     for i in range(featmat.shape[0]-3):
         pivot = featmat[i][:65]
+        f1 = 'Test_lance/IR_files/%s.ir.c'%assignment
         distlist = []
         for j in range(featmat.shape[0]):
             if j==i:

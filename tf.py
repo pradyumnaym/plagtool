@@ -84,6 +84,3 @@ def generate_text_features(f_1, f_2):
 
     
 
-f_1 = '/home/anushkini/Desktop/PD/plagtool/Test_lance/IR_files/addSub.ir.c'
-f_2 = '/home/anushkini/Desktop/PD/plagtool/Test_lance/IR_files/addSub_1.ir.c'
-print(generate_text_features(f_1, f_2))
