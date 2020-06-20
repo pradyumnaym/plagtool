@@ -52,6 +52,7 @@ pairlabel = []
 pairrep = []
 firstele = []
 secondele = []
+pair_u = []
 
 for assignment in assignments:
     featmat = assignments[assignment]
@@ -62,34 +63,51 @@ for assignment in assignments:
     for i in range(featmat.shape[0]):
         pivot = featmat[i][:65]
         type1 = featmat[i][65]
+
         if(type1 == 0):
             f1 = osp.join("D:\plagtool\Test_lance","IR_files",  "%s.ir.c"%assignment)
+            f1_u = osp.join("D:\plagtool\Test_lance",  "%s.c"%assignment)
+
         elif(type1== 1):
             subid = list(sorted(list(d[assignment]["plag"].keys())))[i-1]
             f1 =osp.join("D:\plagtool\Test_lance","IR_files", '%s_%s.ir.c'%(assignment, subid))
+            f1_u =osp.join("D:\plagtool\Test_lance", '%s_%s.c'%(assignment, subid))
+
         else:
             subid =list(sorted(list(d[assignment]["uplag"].keys())))[i-1-len(list(d[assignment]['plag'].keys()))]
             f1 = osp.join("D:\plagtool\Test_lance","IR_files",  '%s-%s.ir.c'%(assignment,subid))
+            f1_u = osp.join("D:\plagtool\Test_lance", '%s-%s.c'%(assignment,subid))
+
         
         for j in range(i+1, featmat.shape[0]):
             newfeats = featmat[j][:65]
             type2 = featmat[j][65]
             if(type2 == 0):
                 f2 = osp.join("D:\plagtool\Test_lance","IR_files",  "%s.ir.c"%assignment)
+                f2_u = osp.join("D:\plagtool\Test_lance",  "%s.c"%assignment)
+
             elif(type2== 1):
                 subid = list(sorted(list(d[assignment]["plag"].keys())))[j-1]
-                f2 =osp.join("D:\plagtool\Test_lance","IR_files", '%s_%s.ir.c'%(assignment, subid))
+                f2 = osp.join("D:\plagtool\Test_lance","IR_files", '%s_%s.ir.c'%(assignment, subid))
+                f2_u = osp.join("D:\plagtool\Test_lance", '%s_%s.c'%(assignment, subid))
+
             else:
                 subid =list(sorted(list(d[assignment]["uplag"].keys())))[j-1-len(list(d[assignment]['plag'].keys()))]
                 f2 = osp.join("D:\plagtool\Test_lance","IR_files",  '%s-%s.ir.c'%(assignment,subid))
+                f2_u = osp.join("D:\plagtool\Test_lance",  '%s-%s.c'%(assignment,subid))
+
 
             diff = np.abs(pivot - newfeats)
             textfeats = generate_text_features(f1, f2)
+            textfeats_u = generate_text_features(f1_u, f2_u)
             diff = np.concatenate([diff, np.asarray(textfeats, dtype = np.float32)], 0)
+            diff_u = np.concatenate([diff, np.asarray(textfeats_u, dtype = np.float32)], 0)
 
             firstele.append(pivot)
             secondele.append(newfeats)
             pairrep.append(diff)
+            pair_u.append(diff_u)
+
             if type1==0 and type2==1:
                 pairlabel.append(1)
             elif type1==1 and type2==1:
@@ -101,15 +119,16 @@ pairlabel  =  np.asarray(pairlabel, dtype = np.float32)
 pairrep = np.asarray(pairrep, dtype = np.float32)
 firstele =  np.asarray(firstele, dtype = np.float32)
 secondele =  np.asarray(secondele, dtype = np.float32)
-
+pair_u = np.asarray(pair_u, dtype  = np.float32)
 all_proc = {
     "labels" : pairlabel,
     "pair_rep" : pairrep, #incl textual features
     "firstele": firstele,
-    "secondele" : secondele
+    "secondele" : secondele,
+    "pair_rep_u": pair_u
 }
 
-with open("D:\plagtool\\all_proc.pkl", "wb") as f:
+with open("D:\plagtool\\all_proc_u.pkl", "wb") as f:
     pickle.dump(all_proc, f)
 
 print(pairlabel.shape, pairrep.shape, firstele.shape, secondele.shape)
