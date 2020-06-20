@@ -1,52 +1,52 @@
 graph: { title : "LANCE2Graph"
-node: { title : "137007744 "
+node: { title : "140522112 "
  label: "t1
 "
 color: lightred
 }
-node: { title : "137010832 "
+node: { title : "140525200 "
  label: "n_2
 "
 color: lightgreen
 }
-node: { title : "137009632 "
+node: { title : "140524000 "
  label: "t2
 "
 color: lightred
 }
-node: { title : "137010016 "
+node: { title : "140524384 "
  label: "t3
 "
 color: green
 }
-node: { title : "137010400 "
+node: { title : "140524768 "
  label: "t4
 "
 color: lightgreen
 }
-node: { title : "137010784 "
+node: { title : "140525152 "
  label: "t5
 "
 color: green
 }
-edge: { sourcename: "137007744 "
-targetname: "137010832 "
-label: "edge 137239520"
+edge: { sourcename: "140522112 "
+targetname: "140525200 "
+label: "edge 140753888"
 color: red
 }
-edge: { sourcename: "137010016 "
-targetname: "137010832 "
-label: "edge 137239584"
+edge: { sourcename: "140524384 "
+targetname: "140525200 "
+label: "edge 140753952"
 color: red
 }
-edge: { sourcename: "137010784 "
-targetname: "137010832 "
-label: "edge 137239648"
+edge: { sourcename: "140525152 "
+targetname: "140525200 "
+label: "edge 140754016"
 color: red
 }
-edge: { sourcename: "137010784 "
-targetname: "137010400 "
-label: "edge 137239712"
+edge: { sourcename: "140525152 "
+targetname: "140524768 "
+label: "edge 140754080"
 color: red
 }
 

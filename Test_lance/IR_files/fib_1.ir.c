@@ -21,18 +21,18 @@ int fib(int n_2)
  int t7;
 
 
- /* 3 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_4.c" */
+ /* 3 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_1.c" */
  /* $ return n;$ */
 
 	return n_2;
 
 
- /* 2 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_4.c" */
+ /* 2 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_1.c" */
  /* $ if(n <= 1)$ */
 
  LL1:
 
- /* 4 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_4.c" */
+ /* 4 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_1.c" */
  /* $ return fib(n-1) + fib(n-2);$ */
 
 	t3 = n_2 - 1;
@@ -46,29 +46,29 @@ int fib(int n_2)
 
 int main()
 {
- int pym_5;
+ int p_5;
  int t8;
- int avk_6;
+ int q_6;
  int t9;
- int rn_7;
+ int r_7;
  int n_8;
  int t10;
  int res_9;
  int t12;
 
 
- /* 13 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_4.c" */
+ /* 12 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_1.c" */
  /* $ int n = 10;$ */
 
 	n_8 = 10;
 
- /* 14 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_4.c" */
+ /* 13 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_1.c" */
  /* $ int res = fib(n);$ */
 
 	t10 = fib(n_8);
 	res_9 = t10;
 
- /* 15 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_4.c" */
+ /* 14 "/home/anushkini/Desktop/PD/plagtool/Test_lance/fib_1.c" */
  /* $ printf("%d\n",res);$ */
 
 	t12 = printf(lance_static_t11,res_9);

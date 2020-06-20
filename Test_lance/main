@@ -1,37 +1,37 @@
 graph: { title : "LANCE2Graph"
-node: { title : "146735792 "
+node: { title : "145699504 "
  label: "a_3
 "
 color: lightgreen
 }
-node: { title : "146738832 "
+node: { title : "145702544 "
  label: "b_4
 "
 color: lightgreen
 }
-node: { title : "146737680 "
+node: { title : "145701392 "
  label: "temp_5
 "
 color: lightgreen
 }
-node: { title : "146735744 "
+node: { title : "145699456 "
  label: "t2
 "
 color: green
 }
-edge: { sourcename: "146737680 "
-targetname: "146735792 "
-label: "edge 146733008"
+edge: { sourcename: "145701392 "
+targetname: "145699504 "
+label: "edge 145696720"
 color: red
 }
-edge: { sourcename: "146735792 "
-targetname: "146738832 "
-label: "edge 146733072"
+edge: { sourcename: "145699504 "
+targetname: "145702544 "
+label: "edge 145696784"
 color: red
 }
-edge: { sourcename: "146738832 "
-targetname: "146737680 "
-label: "edge 146733136"
+edge: { sourcename: "145702544 "
+targetname: "145701392 "
+label: "edge 145696848"
 color: red
 }
 
