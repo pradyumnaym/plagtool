@@ -120,6 +120,13 @@ pairrep = np.asarray(pairrep, dtype = np.float32)
 firstele =  np.asarray(firstele, dtype = np.float32)
 secondele =  np.asarray(secondele, dtype = np.float32)
 pair_u = np.asarray(pair_u, dtype  = np.float32)
+
+scaler = MinMaxScaler()
+pairrep[:, 58:] = scaler.fit_transform(pairrep[:, 58:])
+scaler = MinMaxScaler()
+pair_u[:, 58:] = scaler.fit_transform(pair_u[:, 58:])
+
+
 all_proc = {
     "labels" : pairlabel,
     "pair_rep" : pairrep, #incl textual features
