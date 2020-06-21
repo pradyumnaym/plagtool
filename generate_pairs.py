@@ -7,38 +7,35 @@ from tf import generate_text_features
 
 import os.path as osp
 
+#read the merged features pickle dictionary
 with open("mfeat_mean.pkl", "rb") as f:
     d = pickle.load(f)
 
+#function to compute the euclidean distance between two vectors
 def euclidean_distance(v1, v2):
     return np.sqrt(np.sum(np.square(v1-v2)))
 
+#a dictionary that will hold all the assignment data
 assignments = {}
 
+#iterate through each assignment and generate features
 for assignment in d:
     labelarray = [0]    #0 - orig, 1 - plag, 2 - uplag
-
     asgnfeatures = np.zeros((0, 65), dtype = np.float32)
-
     asgnfeatures = np.concatenate(
         [asgnfeatures, 
         np.expand_dims(d[assignment]['orig'],0)
         ], 0)
 
-
     for submission in sorted(d[assignment]["plag"]):
-
         d[assignment]["plag"][submission] = np.expand_dims(d[assignment]["plag"][submission], 0)
         asgnfeatures = np.concatenate([asgnfeatures, d[assignment]["plag"][submission]], 0)
         labelarray.append(1)
-
     for submission in sorted(d[assignment]["uplag"]):
         d[assignment]["uplag"][submission] = np.expand_dims(d[assignment]["uplag"][submission], 0)
         asgnfeatures = np.concatenate([asgnfeatures, d[assignment]["uplag"][submission]], 0)
-        
         labelarray.append(2)
     assignments[assignment] = asgnfeatures
-
     assignments[assignment] = np.concatenate([assignments[assignment], np.expand_dims(np.asarray(labelarray, dtype = np.float32), 1)], 1)
 
 for assignment in assignments:
@@ -54,6 +51,7 @@ firstele = []
 secondele = []
 pair_u = []
 
+#generate pairs of codes for each assignment and create combined numpy arrays
 for assignment in assignments:
     featmat = assignments[assignment]
 
@@ -114,6 +112,7 @@ for assignment in assignments:
                 pairlabel.append(1)
             else:
                 pairlabel.append(0)
+
 
 pairlabel  =  np.asarray(pairlabel, dtype = np.float32)
 pairrep = np.asarray(pairrep, dtype = np.float32)

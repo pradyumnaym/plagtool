@@ -5,7 +5,7 @@
 #./runs.sh subid moss jplag mossw jplagw
 
 #export PATH="/home/pradyumna/RELEASE/BIN_LINUX:$PATH"
-export PATH="/home/anushkini/Desktop/PD/plagtool/RELEASE/BIN_LINUX:$PATH"
+export PATH="/home/anushkini/Desktop/PD/plagtool/RELEASE/BIN_LINUX:$PATH"    #path to the lance executables
 #export PATH="/home/ubuntu/plagtool/RELEASE/BIN_LINUX:$PATH"
 
 
