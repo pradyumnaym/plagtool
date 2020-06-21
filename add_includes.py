@@ -1,4 +1,6 @@
 import os
+
+#add #include stdio to each code file
 PATH = 'Codes/'
 for root,dirs,files in os.walk(PATH):
     for file in files:

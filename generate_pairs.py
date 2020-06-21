@@ -121,6 +121,7 @@ firstele =  np.asarray(firstele, dtype = np.float32)
 secondele =  np.asarray(secondele, dtype = np.float32)
 pair_u = np.asarray(pair_u, dtype  = np.float32)
 
+#normalize the textual features
 scaler = MinMaxScaler()
 pairrep[:, 66:] = scaler.fit_transform(pairrep[:, 66:])
 scaler = MinMaxScaler()
