@@ -67,7 +67,6 @@ for assignment in d:
         print(d[assignment]["uplag"][uplag_assignment].shape)
         #count += 1
 
-# print(count)
 
 with open("mfeat_sum.pkl", "wb") as f:
     pickle.dump(d, f)
