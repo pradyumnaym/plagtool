@@ -102,14 +102,10 @@ for root,dirs,files in os.walk(PATH):
         f_names.append(os.path.abspath(os.path.join(root,f)))
 
 text_feats = list()
-for i in range(0,1):#range(len(f_names)):
+for i in range(len(f_names)):
     for j in range(i+1,len(f_names)):
         text_feats.append(generate_text_features(f_names[i],f_names[j]))
-
-pprint.pprint(text_feats)
 
 scaler = MinMaxScaler()
 text_feats = scaler.fit_transform(text_feats)
 
-pprint.pprint(text_feats)
-    
