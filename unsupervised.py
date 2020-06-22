@@ -13,7 +13,10 @@ import Levenshtein
 from difflib import Differ
 import re
 import pprint
+from scipy.interpolate import lagrange
+from numpy.polynomial.polynomial import Polynomial
 import pickle
+import numpy as np
 
 
 with open(os.path.join(".", "Feature_files", "mfeat_mean.pkl"), "rb") as f:
@@ -22,11 +25,10 @@ with open(os.path.join(".", "Feature_files", "mfeat_mean.pkl"), "rb") as f:
 
 def getMilepostFeatures(filename):
     filename = filename.split(".")[0] #remove the extension
-
     if "-" in filename :
-        return d[filename]["uplag"][filename.split("-")[1]]
+        return d[filename.split("-")[0]]["uplag"][filename.split("-")[1]]
     elif "_" in filename:
-        return d[filename]["plag"][filename.split("_")[1]]
+        return d[filename.split("_")[0]]["plag"][filename.split("_")[1]]
     else:
         return d[filename]["orig"]
 
@@ -108,7 +110,7 @@ def generate_text_features(f_1, f_2):
     f1.close()
     f2.close()
 
-    return [line_diff[0], line_diff_ratio[0], av_diff[0], edit_dist[0], common_line[0], common_line_ratio[0], common_comment[0], common_comment_ratio[0]]
+    return np.asarray([line_diff[0], line_diff_ratio[0], av_diff[0], edit_dist[0], common_line[0], common_line_ratio[0], common_comment[0], common_comment_ratio[0]])
 
 
 
@@ -117,11 +119,32 @@ for root,dirs,files in os.walk(PATH):
     for f in files:
         f_names.append(os.path.abspath(os.path.join(root,f)))
 
-text_feats = list()
-for i in range(len(f_names)):
-    for j in range(i+1,len(f_names)):
-        text_feats.append(generate_text_features(f_names[i],f_names[j]))
+feats = list()
+for i in range(0,1):#range(len(f_names)):
+    pivot = f_names[i].split(os.path.sep)[-1]
+    p_f = getMilepostFeatures(pivot)
+    distlist = []
+    
+    for j in range(len(f_names)):
+        if(i == j):
+             continue
+        o_f = getMilepostFeatures(f_names[j].split(os.path.sep)[-1])
+        diff = np.abs(p_f - o_f)
+        feats.append(np.concatenate([diff,generate_text_features(f_names[i],f_names[j])]))
+    
+    scaler = MinMaxScaler()
+    feats = scaler.fit_transform(feats)
 
-scaler = MinMaxScaler()
-text_feats = scaler.fit_transform(text_feats)
+    distlist = [np.sum(x) for x in feats]
+
+    mean = sum(distlist)/len(distlist)
+    least = min(distlist)
+    most = max(distlist)
+
+    poly = lagrange([1, mean/most, 0], [0., 0.5, 1.0])
+
+    print("The plagiarism predictions are:")
+    for k in distlist:
+        
+        print(round(np.polyval(Polynomial(poly).coef, k/most), 3))
 
