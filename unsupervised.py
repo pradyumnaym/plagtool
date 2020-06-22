@@ -13,6 +13,22 @@ import Levenshtein
 from difflib import Differ
 import re
 import pprint
+import pickle
+
+
+with open(os.path.join(".", "Feature_files", "mfeat_mean.pkl"), "rb") as f:
+    d = pickle.load(f)
+
+
+def getMilepostFeatures(filename):
+    filename = filename.split(".")[0] #remove the extension
+
+    if "-" in filename :
+        return d[filename]["uplag"][filename.split("-")[1]]
+    elif "_" in filename:
+        return d[filename]["plag"][filename.split("_")[1]]
+    else:
+        return d[filename]["orig"]
 
 PATH = sys.argv[1]
 
