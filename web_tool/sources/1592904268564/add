@@ -1,0 +1,114 @@
+graph: { title : "LANCE2Graph"
+node: { title : "158072176 "
+ label: "p_6
+"
+color: lightgreen
+}
+node: { title : "158073056 "
+ label: "t3
+"
+color: lightred
+}
+node: { title : "158072224 "
+ label: "q_7
+"
+color: lightred
+}
+node: { title : "158073104 "
+ label: "t4
+"
+color: lightred
+}
+node: { title : "158072864 "
+ label: "r_8
+"
+color: lightred
+}
+node: { title : "158072960 "
+ label: "t1
+"
+color: lightred
+}
+node: { title : "158073008 "
+ label: "t2
+"
+color: lightred
+}
+node: { title : "158072912 "
+ label: "t5
+"
+color: lightgreen
+}
+node: { title : "158072032 "
+ label: "a_2
+"
+color: lightgreen
+}
+node: { title : "158072080 "
+ label: "b_3
+"
+color: lightgreen
+}
+node: { title : "158072128 "
+ label: "c_5
+"
+color: green
+}
+edge: { sourcename: "158073056 "
+targetname: "158072176 "
+label: "edge 158377488"
+color: red
+}
+edge: { sourcename: "158072224 "
+targetname: "158073056 "
+label: "edge 158377552"
+color: red
+}
+edge: { sourcename: "158073104 "
+targetname: "158072176 "
+label: "edge 158377616"
+color: red
+}
+edge: { sourcename: "158072864 "
+targetname: "158073104 "
+label: "edge 158377680"
+color: red
+}
+edge: { sourcename: "158072960 "
+targetname: "158072176 "
+label: "edge 158377744"
+color: red
+}
+edge: { sourcename: "158072224 "
+targetname: "158072960 "
+label: "edge 158377808"
+color: red
+}
+edge: { sourcename: "158073008 "
+targetname: "158072176 "
+label: "edge 158377872"
+color: red
+}
+edge: { sourcename: "158072864 "
+targetname: "158073008 "
+label: "edge 158377936"
+color: red
+}
+edge: { sourcename: "158072912 "
+targetname: "158072032 "
+label: "edge 158378000"
+color: red
+}
+edge: { sourcename: "158072912 "
+targetname: "158072080 "
+label: "edge 158378064"
+color: red
+}
+edge: { sourcename: "158072128 "
+targetname: "158072912 "
+label: "edge 158378128"
+color: red
+}
+
+
+}
