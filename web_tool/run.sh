@@ -35,14 +35,19 @@ for filename in ./*.c; do
 	compile "$filename"
 done
 
+#Our obfuscation remover
+for filename in ./*.ir.c; do
+	myapp "$filename"
+done
+
 #Dead code elimination
 for filename in ./*.ir.c; do
-        dce "$filename"
+    dce "$filename"
 done
 
 #Symbol table cleanup
 for filename in ./*.ir.c; do
-        stcleanup "$filename"
+    stcleanup "$filename"
 done
 
 cd ..
